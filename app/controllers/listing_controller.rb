@@ -1,6 +1,11 @@
 class ListingController < ApplicationController
   def index
-    @listings = Listing.all
+    @listings1 = Listing.all
+    if params[:search]
+      @listings = Listing.search(params[:search])
+    else
+      @listings = []
+    end
   end
 
   def show

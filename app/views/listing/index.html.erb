@@ -1,10 +1,28 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<h1>Listings</h1>
 
-<% @listings.each do |listing| %>
+<% @listings1.each do |listing| %>
 <%= listing.price %> <br>
 <%= listing.name %> <br>
 <%= listing.description %> <br>
 <%= listing.difficulty %> <br>
 <%= listing.players %>
+<% end %>
+
+<br>
+
+<%= form_tag(listing_index_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% if @listings.present? %>
+  <% @listings.each do |listing| %>
+  <%= listing.price %> <br>
+  <%= listing.name %> <br>
+  <%= listing.description %> <br>
+  <%= listing.difficulty %> <br>
+  <%= listing.players %>
+<% end %>
+<% else %>
+  <p>There are no listings containing the term(s) <%= params[:search] %>.</p>
 <% end %>
