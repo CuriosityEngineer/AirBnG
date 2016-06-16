@@ -2,9 +2,18 @@ Rails.application.routes.draw do
 
   resources :booking
   resources :listing
-  resources :profile
 
   devise_for :users
+
+  namespace :user do
+    get "/profile" => "/profile#show", as: :profile
+    get "/profile/new" => "/profile#new", as: :new_profile
+    post "/profile" => "/profile#create"
+    get "/profile/edit" => "/profile#create", as: :edit_profile
+    put "/profile" => "/profile#update"
+    patch "/profile" => "/profile#update"
+    delete "/profile" => "/profile#destroy"
+  end
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
