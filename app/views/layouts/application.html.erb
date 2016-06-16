@@ -16,15 +16,15 @@
         <!-- Nav Bar -->
         <div class="navbar-fixed">
             <nav>
-                <div class="nav-wrapper">
+                <div class="nav-wrapper grey darken-4">
                     <div class="brand-logo"><%= link_to('AIRBnG', home_home_path) %></div>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><%= link_to('Board Games', listing_index_path) %></li>
                         <% if user_signed_in? %>
-                          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-                        <% else %>
-                          <li><%= link_to('Login', new_user_session_path)  %></li>
-                          <li><%= link_to('Sign up', new_user_registration_path) %></li>
+                        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                    <% else %>
+                        <li><%= link_to('Login', new_user_session_path)  %></li>
+                        <li><%= link_to('Sign up', new_user_registration_path) %></li>
                         <% end %>
                     </ul>
                 </div>
@@ -37,5 +37,33 @@
             <%= yield %>
 
         </div>
+
+        <!-- Footer -->
+        <footer class="page-footer grey darken-4">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <h5 class="white-text">Footer Content</h5>
+                </div>
+                <div class="col">
+                    <ul>
+                        <li>
+                            <a href="#" class="grey-text text-lighten-4 right">Help</a>
+                        </li>
+                        <li>
+                            <a href="#" class="grey-text text-lighten-4 right">Privacy and Terms</a>
+                        </li>
+                        <li>
+                            <a href="#" class="grey-text text-lighten-4 right">User Agreement</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright black">
+                <div class="container">
+                    © 2016 Copyright Information
+                    <a class="grey-text text-lighten-4 right" href="#!">Links</a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
