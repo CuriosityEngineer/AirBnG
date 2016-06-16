@@ -1,0 +1,30 @@
+<h1>Listings</h1>
+
+<% @listings1.each do |listing| %>
+<b><%= link_to listing.name, listing %></b> <br>
+Description: <%= listing.description %> <br>
+Price: <%= listing.price %> <br>
+Difficulty: <%= listing.difficulty %> <br>
+Number of players: <%= listing.players %> <br><br>
+<% end %>
+
+<br>
+
+<%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<br>
+
+<% if @listings.present? %>
+  <% @listings.each do |listing| %>
+  <b><%= listing.name %></b> <br>
+  Description: <%= listing.description %> <br>
+  Price: <%= listing.price %> <br>
+  Difficulty: <%= listing.difficulty %> <br>
+  Number of players: <%= listing.players %> <br><br>
+<% end %>
+<% else %>
+  <p>There are no listings containing the term(s) <%= params[:search] %>.</p>
+<% end %>
