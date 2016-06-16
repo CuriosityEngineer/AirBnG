@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :booking
-  resources :listing
+  resources :listings
 
   devise_for :users
 
