@@ -5,13 +5,10 @@
   <div class="card-panel z-depth-3">
     <h5 class="valign">Time to play some board games!</h5>
     <p>Start searching for some awesome games near you.</p>
-    <form>
-        <div class="input-field" style="border:none;">
-          <input id="search" type="search" required>
-          <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
+    <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= submit_tag "Search" %>
+    <% end %>
   </div>
   </div>
 

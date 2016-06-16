@@ -32,6 +32,14 @@
 .login {
   background-image: url("https://i.imgur.com/5ruk1lx.jpg");
 }
+.card{
+  float: left;
+  width: 33%;
+  margin: 10px;
+}
+.divsize {
+  height: 900px
+}
 .page_footer {
   background-color: #292929;
 }
