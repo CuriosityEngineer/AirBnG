@@ -1,28 +1,21 @@
 Rails.application.routes.draw do
 
-  get 'booking/show'
-
-  get 'booking/new'
-
-  get 'booking/edit'
-
-  get 'booking/destroy'
-
-  get 'profile/show'
-
-  get 'profile/edit'
-
-  get 'profile/destroy'
-
-  get 'profile/new'
-
-  get 'home/home'
-  
-  resources :listing
+  resources :booking
+  resources :listings
 
   devise_for :users
 
-  root 'home#home'
+  namespace :user do
+    get "/profile" => "/profile#show", as: :profile
+    get "/profile/new" => "/profile#new", as: :new_profile
+    post "/profile" => "/profile#create"
+    get "/profile/edit" => "/profile#create", as: :edit_profile
+    put "/profile" => "/profile#update"
+    patch "/profile" => "/profile#update"
+    delete "/profile" => "/profile#destroy"
+  end
+
+  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
