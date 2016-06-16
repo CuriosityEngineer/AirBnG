@@ -29,6 +29,9 @@
   background-attachment: fixed;
   background-position: 75% 75%;
 }
+.login {
+  background-image: url("https://i.imgur.com/5ruk1lx.jpg");
+}
 .page_footer {
   background-color: #292929;
 }
