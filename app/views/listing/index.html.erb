@@ -1,7 +1,7 @@
 <h1>Listings</h1>
 
 <% @listings1.each do |listing| %>
-<b><%= listing.name %></b> <br>
+<b><%= link_to listing.name, listing %></b> <br>
 Description: <%= listing.description %> <br>
 Price: <%= listing.price %> <br>
 Difficulty: <%= listing.difficulty %> <br>
