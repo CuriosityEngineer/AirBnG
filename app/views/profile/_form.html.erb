@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="card-panel">
+<h4>Your Profile</4>
+  <br>
+  <br>
 <%= form_for @profile, url: user_profile_path do |f| %>
 
     <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -16,7 +21,10 @@
        <%= f.label :avatar %>
        <%= f.text_field :avatar, class: "form-control", placeholder: "url . . ."   %>
     </div>
+    <br>
 
     <%= f.submit (@profile.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
 
 <% end %>
+</div>
+</div>
