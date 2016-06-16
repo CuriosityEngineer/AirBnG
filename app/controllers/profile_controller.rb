@@ -5,6 +5,7 @@ class ProfileController < ApplicationController
 
   def new
     @profile = Profile.new
+    @profile.user_id = current_user.id
   end
 
   def create

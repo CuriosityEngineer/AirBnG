@@ -1,2 +1,22 @@
-<h1>Profile#new</h1>
-<p>Find me in app/views/profile/new.html.erb</p>
+<%= form_for @profile do |f| %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <div class="form-group">
+       <%= f.label :name %>
+       <%= f.text_field :name, class: "form-control", placeholder: ". . ." %>
+    </div>
+
+    <div class="form-group">
+       <%= f.label :description %>
+       <%= f.text_field :description, class: "form-control", placeholder: ". . ."   %>
+    </div>
+
+    <div class="form-group">
+       <%= f.label :avatar %>
+       <%= f.text_field :avatar, class: "form-control", placeholder: "url . . ."   %>
+    </div>
+
+    <%= f.submit (@profile.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
+
+<% end %>
