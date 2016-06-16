@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615135202) do
+ActiveRecord::Schema.define(version: 20160616115710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20160615135202) do
     t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "profile_id"
     t.integer  "listing_id"
+    t.integer  "user_id"
   end
 
   add_index "bookings", ["listing_id"], name: "index_bookings_on_listing_id", using: :btree
-  add_index "bookings", ["profile_id"], name: "index_bookings_on_profile_id", using: :btree
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "listings", force: :cascade do |t|
     t.integer  "price"
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20160615135202) do
     t.integer  "players"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "profile_id"
+    t.integer  "user_id"
   end
 
-  add_index "listings", ["profile_id"], name: "index_listings_on_profile_id", using: :btree
+  add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "avatar"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160615135202) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "bookings", "listings"
-  add_foreign_key "bookings", "profiles"
-  add_foreign_key "listings", "profiles"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "listings", "users"
   add_foreign_key "profiles", "users"
 end
