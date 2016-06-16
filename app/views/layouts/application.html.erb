@@ -17,9 +17,9 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper grey darken-4">
-                    <div class="brand-logo"><%= link_to('AIRBnG', home_home_path) %></div>
+                    <div class="brand-logo"><%= link_to('AIRBnG', root_path) %></div>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><%= link_to('Board Games', listing_index_path) %></li>
+                        <li><%= link_to('Board Games', listings_path) %></li>
                         <% if user_signed_in? %>
                         <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
                     <% else %>
