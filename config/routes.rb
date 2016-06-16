@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  namespace :users do
+  namespace :user do
     get "/profile" => "/profile#show", as: :profile
     get "/profile/new" => "/profile#new", as: :new_profile
     post "/profile" => "/profile#create"
