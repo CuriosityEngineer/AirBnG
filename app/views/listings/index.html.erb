@@ -37,10 +37,12 @@
             <% @listings1.each do |listing| %>
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="http://www.smythstoysblog.com/wp-content/uploads/2016/05/how-classic-board-games-can-be-fun-and-educational.jpg">
+                    <img class="activator" src="<%= listing.avatar %>">
                 </div>
                 <div class="card-content">
-                    <p>Description:
+                    <p><b><%= listing.name %></b>
+                      <br>
+                      Description:
                         <%= listing.description %>
                         <br>
                         Price:
