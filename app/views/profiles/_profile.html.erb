@@ -5,7 +5,8 @@
     Bio:
     <%= @profile.description %><br>
     <br>
-    <%= link_to('New listing', new_listing_path)  %>
+    <%= link_to('New listing', new_listing_path)  %><br>
+    <%= link_to('Edit your profile', user_edit_profile_path)  %>
 </div>
 <div class="avatar">
     <img src="<%= @profile.avatar %>" width="100px"/>

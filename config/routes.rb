@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get "/profile" => "/profile#show", as: :profile
     get "/profile/new" => "/profile#new", as: :new_profile
     post "/profile" => "/profile#create"
-    get "/profile/edit" => "/profile#create", as: :edit_profile
+    get "/profile/edit" => "/profile#edit", as: :edit_profile
     put "/profile" => "/profile#update"
     patch "/profile" => "/profile#update"
     delete "/profile" => "/profile#destroy"
