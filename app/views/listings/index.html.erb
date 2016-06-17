@@ -1,16 +1,22 @@
-<div class="container">
-  <div class="divsize">
-    <div class="card-panel">
-        <h4>Board Games</h4>
+<!-- image and search -->
+<div class="search-field parallax-effect" align="center">
 
-        <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-        <%= submit_tag "Search" %>
-        <% end %>
+    <!-- container text -->
+    <div class="container valign-wrapper">
+        <div class="card-panel z-depth-3">
+            <h4>Board Games</h4>
+
+            <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+            <%= submit_tag "Search" %>
+            <% end %>
+        </div>
     </div>
+
     <br>
 
     <div class="results">
+
         <% if @listings.present? %>
         <% @listings.each do |listing| %>
         <b><%= listing.name %></b>
@@ -37,10 +43,13 @@
             <% @listings1.each do |listing| %>
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="http://www.smythstoysblog.com/wp-content/uploads/2016/05/how-classic-board-games-can-be-fun-and-educational.jpg">
+                    <img class="activator" src="<%=listing.avatar %>">
                 </div>
                 <div class="card-content">
-                    <p>Description:
+                    <p>
+                        <b><%=link_to listing.name, listing %></b>
+                        <br>
+                        Description:
                         <%= listing.description %>
                         <br>
                         Price:
@@ -53,13 +62,16 @@
                         <%= listing.players %>
                         <br><br>
                     </p>
+                    <div class="chip">
+                        <img src="<%= listing.avatar %>" alt="Contact Person">
+                        <%= listing.name %>
+                    </div>
                 </div>
 
             </div>
 
+            <% end %>
+        </div>
 
-        <% end %>
     </div>
-</div>
-</div>
 </div>
