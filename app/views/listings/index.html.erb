@@ -1,18 +1,17 @@
 <!-- image and search -->
-    <div class="search-field parallax-effect" align="center">
+<div class="search-field parallax-effect" align="center">
 
-        <!-- container text -->
-        <div class="container valign-wrapper">
-            <div class="card-panel z-depth-3">
-              <h4>Board Games</h4>
+    <!-- container text -->
+    <div class="container valign-wrapper">
+        <div class="card-panel z-depth-3">
+            <h4>Board Games</h4>
 
-              <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-              <%= submit_tag "Search" %>
-              <% end %>
-            </div>
+            <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+            <%= submit_tag "Search" %>
+            <% end %>
         </div>
-
+    </div>
 
     <br>
 
@@ -47,9 +46,10 @@
                     <img class="activator" src="<%=listing.avatar %>">
                 </div>
                 <div class="card-content">
-                    <p><b><%=link_to listing.name, listing %></b>
-                      <br>
-                      Description:
+                    <p>
+                        <b><%=link_to listing.name, listing %></b>
+                        <br>
+                        Description:
                         <%= listing.description %>
                         <br>
                         Price:
@@ -62,13 +62,16 @@
                         <%= listing.players %>
                         <br><br>
                     </p>
+                    <div class="chip">
+                        <img src="<%= listing.avatar %>" alt="Contact Person">
+                        <%= listing.name %>
+                    </div>
                 </div>
 
             </div>
 
+            <% end %>
+        </div>
 
-        <% end %>
     </div>
-
-</div>
 </div>
