@@ -5,10 +5,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id if current_user
-    @booking.listing_id = :listing_id
+    @booking.listing_id = (params[:listing_id])
 
     if @booking.save
-      redirect_to listings_path, notice: "Thank you for booking!"
+      flash[:notice] = "Booking recieved. Thank you for your booking!"
+      redirect_to listings_path
     else
       redirect_to listings_path
     end

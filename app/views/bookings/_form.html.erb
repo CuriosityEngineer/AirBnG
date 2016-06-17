@@ -1,6 +1,6 @@
 <h1>Request your booking</h1>
 
-<p><%= @listing.id %>
+
 <%= form_for @booking do |f| %>
 
     <%# f.hidden_field :user_id, :value => current_user.id %>
@@ -15,7 +15,7 @@
        <%= f.label :end_date %>
        <%= f.datetime_field :end_date, class: "form-control", placeholder: ". . ."   %>
     </div>
-
+    <%= hidden_field_tag(:listing_id, "#{@listing.id}") %>
     <%= f.submit (@booking.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
 
 <% end %>
