@@ -5,11 +5,32 @@
         </div>
     </div>
     <div class="container">
-        <div class="card-panel">
-            Hello, this is the box for lists of listings
-        </div>
-        <div class="card-panel">
-            Box for the list of bookings
-        </div>
+<h1>Your games</h1>
+            <% @listings1.each do |listing| %>
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <%=link_to image_tag(listing.avatar), listing %>
+                </div>
+
+                <div class="card-content">
+                    <p>
+                        <b><%=link_to listing.name, listing %></b>
+                        <br>
+                        Description:
+                        <%=listing.description %>
+                        <br>
+                        Price:
+                        <%= listing.price %>
+                        <br>
+                        Difficulty:
+                        <%= listing.difficulty %>
+                        <br>
+                        Number of players:
+                        <%= listing.players %>
+                        <br><br>
+                    </p>
+                  </div>
+                </div>
+          <% end %>
     </div>
 </div>

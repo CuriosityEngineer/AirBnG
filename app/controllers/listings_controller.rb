@@ -17,6 +17,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    @listing = Listing.find( params[:id] )
   end
 
   def destroy
@@ -31,6 +32,16 @@ class ListingsController < ApplicationController
       render :new
     end
   end
+
+  def update
+     @listing = Listing.find( params[:id] )
+
+     if @listing.update_attributes( listing_params )
+       redirect_to @listing
+     else
+       render :edit
+     end
+   end
 
   private
 

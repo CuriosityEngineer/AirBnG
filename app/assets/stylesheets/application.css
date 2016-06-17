@@ -42,7 +42,7 @@ height: 2000px;
 align-items: center;
 }
 .card-image {
-  width: 380px;
+  width: 100%;
 }
 .divsize {
   height: 900px

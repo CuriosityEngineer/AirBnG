@@ -1,7 +1,7 @@
 class ProfileController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :load_profile, only: [:show, :edit, :update, :destroy]
+  before_action :load_profile, only: [:show, :edit,  :update, :destroy]
 
   def new
     @profile = Profile.new
@@ -20,6 +20,7 @@ class ProfileController < ApplicationController
   end
 
   def show
+    @listings1 = Listing.where(user_id: current_user.id)
   end
 
   def edit

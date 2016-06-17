@@ -1,11 +1,17 @@
 <div class="container">
   <div class="card-panel">
 <h1><%= @listing.name %></h1>
-<%= @listing.description%><br>
-<%= @listing.players %>
-<h2>Posted by:  <%= @listing.user.profile.name %> </h2>
+<img src="<%= @listing.avatar %>" width="200px"/><br><br>
+Description: <%= @listing.description%><br>
+Number of players: <%= @listing.players %><br>
+Difficulty: <%= @listing.difficulty %><br>
+Price: <%= @listing.price %><br>
+Posted by:  <%= @listing.user.profile.name %> <br><br>
 
 
 <%= link_to('Book it', new_booking_path(listing_id: @listing.id))  %>
+<% if user_signed_in? && current_user.id == @listing.user_id %>
+<%= link_to('Edit this listing', edit_listing_path)  %>
+<% end %>
 </div>
 </div>
