@@ -3,7 +3,7 @@ class Listing < ActiveRecord::Base
   has_many :bookings
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("name ILIKE ?", "%#{search}%")
   end
 
 end
