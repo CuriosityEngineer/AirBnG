@@ -34,8 +34,15 @@
 }
 .card{
   float: left;
-  width: 31%;
+  width: 25%;
   margin: 10px;
+}
+.content{
+height: 2000px;
+align-items: center;
+}
+.card-image {
+  width: 380px;
 }
 .divsize {
   height: 900px

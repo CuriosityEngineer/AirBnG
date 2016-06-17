@@ -1,16 +1,23 @@
-<div class="container">
-  <div class="divsize">
-    <div class="card-panel">
-        <h4>Board Games</h4>
+<!-- image and search -->
+    <div class="search-field parallax-effect" align="center">
 
-        <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-        <%= submit_tag "Search" %>
-        <% end %>
-    </div>
+        <!-- container text -->
+        <div class="container valign-wrapper">
+            <div class="card-panel z-depth-3">
+              <h4>Board Games</h4>
+
+              <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+              <%= submit_tag "Search" %>
+              <% end %>
+            </div>
+        </div>
+
+
     <br>
 
     <div class="results">
+
         <% if @listings.present? %>
         <% @listings.each do |listing| %>
         <b><%= listing.name %></b>
@@ -62,6 +69,6 @@
 
         <% end %>
     </div>
-</div>
+
 </div>
 </div>
