@@ -14,7 +14,9 @@
     </div>
 
     <br>
-
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
     <div class="results">
 
         <% if @listings.present? %>
@@ -42,7 +44,7 @@
         <div class="BoardGamePost">
             <% @listings1.each do |listing| %>
             <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
+              <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="<%=listing.avatar %>">
                 </div>
                 <div class="card-content">
@@ -50,7 +52,7 @@
                         <b><%=link_to listing.name, listing %></b>
                         <br>
                         Description:
-                        <%= listing.description %>
+                        <%=listing.description %>
                         <br>
                         Price:
                         <%= listing.price %>
@@ -67,9 +69,7 @@
                         <%= listing.name %>
                     </div>
                 </div>
-
             </div>
-
             <% end %>
         </div>
 

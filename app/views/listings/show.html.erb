@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="card-panel"
+  <div class="card-panel">
 <h1><%= @listing.name %></h1>
 <%= @listing.description%><br>
 <%= @listing.players %>
 <h2>Posted by:  <%= @listing.user.profile.name %> </h2>
 
 
-<%= link_to('Book it', new_booking_path)  %>
+<%= link_to('Book it', new_booking_path(listing_id: @listing.id))  %>
 </div>
 </div>
