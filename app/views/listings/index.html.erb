@@ -44,10 +44,10 @@
             <% @listings1.each do |listing| %>
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="<%= listing.avatar %>">
+                    <img class="activator" src="<%=listing.avatar %>">
                 </div>
                 <div class="card-content">
-                    <p><b><%= listing.name %></b>
+                    <p><b><%=link_to listing.name, listing %></b>
                       <br>
                       Description:
                         <%= listing.description %>
