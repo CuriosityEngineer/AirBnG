@@ -1,5 +1,18 @@
 == AirBnG (Boards n' Games)
 
-An AirBnB clone built with Ruby on Rails with a team of 3 during a week project at Codaisseur.
+An AirBnB clone built with Ruby on Rails with a team of 3 during a week project at Codaisseur Academy.
 
 The concept was to allow users to offer and book boardgames.
+
+== Challenges
+
+The challenges were to allow users to create a listing for a boardgame, as well allow users to book a boardgame during a given time. 
+
+== Todo's
+
+- Allow users to make a specific booking
+- Overhauling the design
+
+== Instructions
+
+To view this project, download or clone the project and run bundle install and rails s subsequently in the command line.
