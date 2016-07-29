@@ -2,7 +2,7 @@
 
 An AirBnB clone built with Ruby on Rails with a team of 3 during a week project at Codaisseur Academy.
 
-The concept was to allow users to offer and book boardgames.
+The concept was to allow users to offer and book boardgames. For a live version, check out https://gentle-plateau-39092.herokuapp.com/.
 
 == Challenges
 
