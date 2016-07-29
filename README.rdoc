@@ -6,7 +6,7 @@ The concept was to allow users to offer and book boardgames. For a live version,
 
 == Challenges
 
-The challenges were to allow users to create a listing for a boardgame, as well allow users to book a boardgame during a given time. 
+The challenges were to allow users to create a listing for a boardgame, as well as to allow users to book a boardgame during a given time. 
 
 == Todo's
 
